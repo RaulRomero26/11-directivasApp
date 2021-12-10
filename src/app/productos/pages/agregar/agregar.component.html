@@ -19,7 +19,7 @@
             error-msg
             [mensaje]="texto1"
             [color]="color"
-            *ngIf="tieneError('nombre')"> 
+            [valido]="!tieneError('nombre')"> 
             </span>
         </div>
     </div>
@@ -43,3 +43,13 @@
 </h3>
 <pre>Valid: {{miFormulario.valid}}</pre>
 <pre>Value: {{miFormulario.value | json}}</pre>
+
+<div class="row mt-5" 
+    *customIf ="miFormulario.valid"
+    >
+    <div class="col">
+        <div class="alert alert-info">
+            TODO OK!
+        </div>
+    </div>
+</div>
